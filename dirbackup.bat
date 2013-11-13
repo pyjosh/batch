@@ -7,17 +7,25 @@
     set hour=%time:~0,2%
     if "%hour:~0,1%"==" " set hour=0%time:~1,1%
     set folder=%date:~10,4%.%date:~4,2%.%date:~7,2%__%hour%.%time:~3,2%
-    :: %backupcmd% "...source dir..." "%drive%\%folder%\...destination dir...
 
     echo ### Backing up ECLIPSE IDE...
-    %backupcmd% "E:\IDE" "%drive%\[%folder%]_Eclipse_IDE"
- 
+    %backupcmd% "C:\Users\josh\Eclipse_studio" "%drive%\[%folder%]_Eclipse_studio"
+    
+    echo ### Backing up PROJECTS...
+    %backupcmd% "C:\Users\josh\Projects" "%drive%\[%folder%]_Projects"
+    
+    echo ### Backing up DOCS...
+    %backupcmd% "C:\Users\josh\Desktop\[SD]" "%drive%\[%folder%]_[SD]"
+    
+    echo ### Backing up QT CREATOR PROJECTS...
+    %backupcmd% "C:\Users\josh\Documents\QtCreatorProjects" "%drive%\[%folder%]_QtCreatorProjects"
 
     :: use below syntax to backup other directories...
     :: %backupcmd% "...source directory..." "%drive%\...destination dir..."
 
     echo Backup Complete!
     @pause
+
 
 
 
